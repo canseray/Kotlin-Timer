@@ -10,10 +10,15 @@ import java.security.AccessControlContext
 
 class PreUtil {
 
+
     companion object{
+
+                                            //layout name
+        private const val TIMER_LENGTH_ID = "com.example.kotlin_timer.timer_length"
+
         fun getTimerLength(context: Context): Int{
-            //placeholder
-            return 1
+            val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+            return preferences.getInt(TIMER_LENGTH_ID,10)
         }
 
         //SharedPreferences: uygulamadan cıktıgında da veriyi saklamak
